@@ -11,4 +11,15 @@ public class Produto {
         this.preco = preco;
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return """
+                ----------|PRODUTO|----------
+                Nome: %s
+                Preço: R$%.2f
+                Quantidade: %d
+                -----------------------------
+                """.formatted(nome, preco, quantidade);
+    }
 }

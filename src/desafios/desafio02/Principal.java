@@ -14,5 +14,11 @@ public class Principal {
         listaDeProdutos.add(produto2);
         listaDeProdutos.add(produto3);
         listaDeProdutos.add(produto4);
+
+        System.out.println("A lista tem " + listaDeProdutos.size() + " produtos.");
+
+        for (int i = 0; i < listaDeProdutos.size(); i++) {
+            System.out.println(listaDeProdutos.get(i));
+        }
     }
 }
