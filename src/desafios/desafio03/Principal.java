@@ -75,5 +75,25 @@ public class Principal {
         precoMedioDosProdutos = somaDosPrecosDosProdutos / quantidadeDeProdutos;
 
         System.out.println(String.format("Preço médio dos produtos = R$%.2f", precoMedioDosProdutos));
+
+        System.out.println("---------------------------------------");
+        Quadrado quadrado1 = new Quadrado(3, 3);
+        Quadrado quadrado2 = new Quadrado(5, 5);
+
+        Circulo circulo1 = new Circulo(3.2);
+        Circulo circulo2 = new Circulo(6.2);
+
+        ArrayList<FiguraGeometrica> figuraGeometricas = new ArrayList<>();
+        figuraGeometricas.add(quadrado1);
+        figuraGeometricas.add(quadrado2);
+        figuraGeometricas.add(circulo1);
+        figuraGeometricas.add(circulo2);
+
+        for (FiguraGeometrica figura: figuraGeometricas) {
+            if (figura instanceof Circulo || figura instanceof Quadrado) {
+                ((Forma) figura).calcularArea();
+                System.out.println(figura);
+            }
+        }
     }
 }
