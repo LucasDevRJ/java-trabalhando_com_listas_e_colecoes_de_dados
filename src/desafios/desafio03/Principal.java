@@ -43,9 +43,37 @@ public class Principal {
         cachorro.abanarRabo();
 
         Animal animal = cachorro;
-        System.out.println(animal);
-        animal.comer();
-        animal.dormir();
-        animal.locomover();
+        if (animal instanceof Cachorro) {
+            animal = cachorro;
+            System.out.println("Esse animal é um cachorro");
+            System.out.println(animal);
+            animal.comer();
+            animal.dormir();
+            animal.locomover();
+        }
+
+        System.out.println("---------------------------------------");
+        Produto produto1 = new Produto("Fone", 99.99);
+        Produto produto2 = new Produto("Mouse", 54.99);
+        Produto produto3 = new Produto("Monitor", 435.00);
+        Produto produto4 = new Produto("Caixa de Som", 80.00);
+
+        ArrayList<Produto> produtos = new ArrayList<>();
+        produtos.add(produto1);
+        produtos.add(produto2);
+        produtos.add(produto3);
+        produtos.add(produto4);
+
+        double somaDosPrecosDosProdutos = 0.0;
+        int quantidadeDeProdutos = 0;
+        double precoMedioDosProdutos = 0.0;
+        for (Produto produto : produtos) {
+            somaDosPrecosDosProdutos = somaDosPrecosDosProdutos + produto.getPreco();
+            quantidadeDeProdutos++;
+            System.out.println(produto);
+        }
+        precoMedioDosProdutos = somaDosPrecosDosProdutos / quantidadeDeProdutos;
+
+        System.out.println(String.format("Preço médio dos produtos = R$%.2f", precoMedioDosProdutos));
     }
 }
