@@ -112,16 +112,11 @@ public class Principal {
 
         ContaBancaria contaComMaiorSaldo = contasBancarias.get(0);
         for (int i = 0; i < contasBancarias.size(); i++) {
-            ContaBancaria contaAtual = contasBancarias.get(i);
             for (int j = 0; j < contasBancarias.size(); j++) {
                 if (i != j) {
                     ContaBancaria contaAhSerComparada = contasBancarias.get(j);
                     if (contaComMaiorSaldo.getSaldo() < contaAhSerComparada.getSaldo()) {
                         contaComMaiorSaldo = contaAhSerComparada;
-                        System.out.println("Conta atual = " + contaAtual);
-                        System.out.println("Conta a ser comparada = " + contaAhSerComparada);
-                        System.out.println("Maior saldo = " + contaComMaiorSaldo);
-
                     }
                 }
             }
