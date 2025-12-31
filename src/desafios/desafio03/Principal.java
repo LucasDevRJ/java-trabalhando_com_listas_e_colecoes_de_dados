@@ -95,5 +95,37 @@ public class Principal {
                 System.out.println(figura);
             }
         }
+
+        System.out.println("---------------------------------------");
+        ContaBancaria contaBancaria1 = new ContaBancaria(324345, 435.67);
+        ContaBancaria contaBancaria2 = new ContaBancaria(876576, 120.34);
+        ContaBancaria contaBancaria3 = new ContaBancaria(945656, 620.34);
+        ContaBancaria contaBancaria4 = new ContaBancaria(904534, 456.67);
+        ContaBancaria contaBancaria5 = new ContaBancaria(453225, 320.50);
+
+        ArrayList<ContaBancaria> contasBancarias = new ArrayList<>();
+        contasBancarias.add(contaBancaria1);
+        contasBancarias.add(contaBancaria2);
+        contasBancarias.add(contaBancaria3);
+        contasBancarias.add(contaBancaria4);
+        contasBancarias.add(contaBancaria5);
+
+        ContaBancaria contaComMaiorSaldo = contasBancarias.get(0);
+        for (int i = 0; i < contasBancarias.size(); i++) {
+            ContaBancaria contaAtual = contasBancarias.get(i);
+            for (int j = 0; j < contasBancarias.size(); j++) {
+                if (i != j) {
+                    ContaBancaria contaAhSerComparada = contasBancarias.get(j);
+                    if (contaComMaiorSaldo.getSaldo() < contaAhSerComparada.getSaldo()) {
+                        contaComMaiorSaldo = contaAhSerComparada;
+                        System.out.println("Conta atual = " + contaAtual);
+                        System.out.println("Conta a ser comparada = " + contaAhSerComparada);
+                        System.out.println("Maior saldo = " + contaComMaiorSaldo);
+
+                    }
+                }
+            }
+        }
+        System.out.println("Conta com o maior saldo = " + contaComMaiorSaldo);
     }
 }
